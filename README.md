@@ -71,5 +71,8 @@ We report the results on ImageNet-C, severity level = 5, with ResNet-50.
 | 256        | 16           | 45.17              | 43.82                   | 44.75                 | 44.29               |
 | 256        | 8            | 43.67              | 41.72                   | 43.47                 | 42.69               |
 
-- **배치 크기가 64일 때, 각 coreset selection 별 TFLOPs 대비 평균 정확도 비교교**
+
+- **배치 크기가 64일 때, 각 coreset selection 별 TFLOPs 대비 평균 정확도 비교**
 ![Top-1 Accuracy by TFLOPs per Method (Batch Size = 64)](eata_coreset/figures/Top_1_Accuracy_by_TFLOPs_per_Method.png)
+
+- **EATA 원본 파일을 확인하려면, eata_original 폴더를 참조해주시길 바랍니다.**

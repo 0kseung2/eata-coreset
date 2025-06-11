@@ -14,21 +14,21 @@
 # 인자 값 정의
 BATCH_SIZE=64
 FILTERING_SIZE=16
-RANDOM_SEED=1013 # [1013, 2029, 3617, 5821, 7919], = 에 공백이 있으면 안됨!!
+RANDOM_SEED=1013 # [1013, 2029, 3617]
 # =====================
 
 pwd
 which python
 hostname
-python3 main_ptflops_random_filtering.py \
+python3 main_random_sampling.py \
  --data /local_datasets/imagenet/ \
  --data_corruption /local_datasets/imagenet-c \
  --exp_type 'each_shift_reset' \
- --algorithm 'eata_ptflops_random_filtering_last' \
+ --algorithm 'eata_random_sampling' \
  --batch_size ${BATCH_SIZE} \
  --filtering_size ${FILTERING_SIZE} \
  --seed ${RANDOM_SEED} \
- --output /data/okys515/repos/fake_audio_detection/project/final_tta_coreset/EATA/output/dir
+ --output /data/okys515/repos/tta/eata_coreset/output/dir
  
 
 exit 0

@@ -23,7 +23,7 @@ python3 main_coreset.py \
  --data /local_datasets/imagenet/ \
  --data_corruption /local_datasets/imagenet-c \
  --exp_type 'each_shift_reset' \
- --algorithm 'eata_coreset_center_based_distance' \
+ --algorithm 'eata_coreset_dot_product' \
  --batch_size ${BATCH_SIZE} \
  --coreset_size ${CORESET_SIZE} \
  --output /data/okys515/repos/tta/eata_coreset/output/dir

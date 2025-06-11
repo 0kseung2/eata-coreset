@@ -115,7 +115,6 @@ def forward_and_adapt_eata(x, model, optimizer, fishers, e_margin, current_model
     ids1 = filter_ids_1 # ex) 0, 3, 5, 6
     ids2 = torch.where(ids1[0]>-0.1) # ex) 0, 1, 2, 3이 됨 그래서 나중에 x[ids1][ids2]될 때, x[ids1]이랑 같게 됨.
     entropys = entropys[filter_ids_1]
-    print("신뢰도 필터링 된 entropys shape: ", entropys.shape) 
 
     # filter redundant and coreset samples (신뢰도 필터링 -> 비중복 필터링 -> coreset 추출을 하는 것)
     if current_model_probs is not None: 

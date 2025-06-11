@@ -165,7 +165,7 @@ if __name__ == '__main__':
         del ewc_optimizer
 
         optimizer = torch.optim.SGD(params, 0.00025, momentum=0.9)
-        adapt_model = eata_random_sampling.EATA(subnet, optimizer, fishers, args.fisher_alpha, e_margin=args.e_margin, d_margin=args.d_margin, coreset_size=args.coreset_size)
+        adapt_model = eata_random_sampling.EATA(subnet, optimizer, fishers, args.fisher_alpha, e_margin=args.e_margin, d_margin=args.d_margin, filtering_size=args.filtering_size)
     else:
         assert False, NotImplementedError
 

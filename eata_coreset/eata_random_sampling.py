@@ -116,27 +116,21 @@ def forward_and_adapt_eata(x, model, optimizer, fishers, e_margin, current_model
     ids1 = filter_ids_1 # ex) 0, 3, 5, 6
     ids2 = torch.where(ids1[0]>-0.1) # ex) 0, 1, 2, 3이 됨 그래서 나중에 x[ids1][ids2]될 때, x[ids1]이랑 같게 됨.
     entropys = entropys[filter_ids_1]
-    print("신뢰도 필터링 된 entropys shape: ", entropys.shape) 
 
     # filter redundant and coreset samples (신뢰도 필터링 -> 비중복 필터링 -> coreset 추출을 하는 것)
     if current_model_probs is not None: 
         cosine_similarities = F.cosine_similarity(current_model_probs.unsqueeze(dim=0), outputs[filter_ids_1].softmax(1), dim=1)
         filter_ids_2 = torch.where(torch.abs(cosine_similarities) < d_margin) # 비중복 샘플에서 필터링 된 인덱스
         entropys = entropys[filter_ids_2]
-        print("신뢰도와 비중복 필터링으로 추출된 entropys shape: ", entropys.shape) 
         ids2 = filter_ids_2
         k = min(filtering_size, filter_ids_2[0].size(0)) # filtering_size = 64, 32, 16, 8로 할것
         random_filtering_ids = random_filtering_indices(filter_ids_2[0].size(0), k) # 두 번 필터링 된 샘플들에 대해서 random_filtering으로 한 번 더 추출
-        print("random filtering으로 추출된 인덱스인 filtering_ids shape: ", random_filtering_ids.shape)
         entropys = entropys[random_filtering_ids]
-        print("신뢰도와 비중복 필터링과 random filtering으로 추출된 entropys shape: ", entropys.shape) 
         updated_probs = update_model_probs(current_model_probs, outputs[filter_ids_1][filter_ids_2][random_filtering_ids].softmax(1))
     else:
         k = min(filtering_size, filter_ids_1[0].size(0)) # filtering_size = 64, 32, 16, 8로 할것
         random_filtering_ids = random_filtering_indices(filter_ids_1[0].size(0), k) # 한 번 필터링 된 샘플들에 대해서 random_filtering으로 한 번 더 추출
-        print("random filtering으로 추출된 인덱스인 filtering_ids shape: ", random_filtering_ids.shape)
         entropys = entropys[random_filtering_ids]
-        print("신뢰도와 filtering_ids으로 추출된 entropys shape: ", entropys.shape) 
         updated_probs = update_model_probs(current_model_probs, outputs[filter_ids_1][random_filtering_ids].softmax(1))
 
     random_filtering_samples_num = len(random_filtering_ids) # 현재 배치에서 추출된 코어셋 샘플 개수

@@ -14,7 +14,7 @@
 # 인자 값 정의
 BATCH_SIZE=64
 FILTERING_SIZE=16
-RANDOM_SEED=1013 # [1013, 2029, 3617]
+RANDOM_SEED=2029 # [1013, 2029, 3617]
 # =====================
 
 pwd

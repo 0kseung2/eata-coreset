@@ -93,8 +93,7 @@ def get_args():
     parser.add_argument('--algorithm', default='eta', type=str, help='eata or eta or tent')  
 
     parser.add_argument('--filtering_size', default=64, type=int, help='filtering size (default: 64)')
-    parser.add_argument('--random_seed', default=1013, type=int, help='random seed for initializing training.')
-
+  
     return parser.parse_args()
 
 
@@ -104,9 +103,9 @@ if __name__ == '__main__':
 
     # set random seeds
     if args.seed is not None:
-        random.seed(args.random_seed) # torch.manual_seed는 모델의 출력에도 영향을 미치는 것으로 판단된다.
+        random.seed(args.seed)
         np.random.seed(args.seed)
-        torch.manual_seed(args.seed) # 혹시 이 코드 때문에 지금까지 random_filtering 실험 결과가 다 동일하게 나온 건가...
+        torch.manual_seed(args.seed)
 
     subnet = Resnet.__dict__[args.arch](pretrained=True)
 

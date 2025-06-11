@@ -15,7 +15,7 @@ import math
 import torch.nn.functional as F
 
 from ptflops import get_model_complexity_info
-
+import random
 
 class EATA(nn.Module):
     """EATA adapts a model by entropy minimization during testing.

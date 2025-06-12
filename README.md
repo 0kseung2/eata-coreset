@@ -24,9 +24,9 @@
 '--algorithm' is choosen from:
   - eata_coreset_center_based_distance
   - eata_coreset_euclidean
-  - eata_coreset_dot_product<br><br>
+  - eata_coreset_dot_product<br>
 '--batch_size' is choosen from:
-  - 64, 128, 256<br><br>
+  - 64, 128, 256<br>
 '--coreset_size' is choosen from:
   - 64, 32, 16, 8 (must < batch size)<br><br>
 
@@ -34,9 +34,9 @@
 ```python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_random_sampling' --batch_size 64 --filtering_size 32 --seed 1013 --output /output/dir```
 
 '--batch_size' is choosen from:
-  - 64, 128, 256<br><br>
+  - 64, 128, 256<br>
 '--filtering_size' is choosen from:
-  - 64, 32, 16, 8 (must < batch size)<br><br>
+  - 64, 32, 16, 8 (must < batch size)<br>
 '--seed' is choosen from:
   - 1013, 2029, 3617<br><br>
 

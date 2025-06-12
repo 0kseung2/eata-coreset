@@ -12,8 +12,8 @@
 
 # =====================
 # 인자 값 정의
-BATCH_SIZE=64
-FILTERING_SIZE=16
+BATCH_SIZE=256
+FILTERING_SIZE=8
 RANDOM_SEED=2029 # [1013, 2029, 3617]
 # =====================
 

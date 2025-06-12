@@ -1,7 +1,18 @@
 """
 Copyright to EATA ICML 2022 Authors, 2022.03.20
 Based on Tent ICLR 2021 Spotlight. 
+
+This file is modified from the official EATA implementation:
+https://github.com/mr-eggplant/EATA.git
+
+License: MIT (see LICENSE file for full license text)
+
+Modifications:
+- Added coreset selection logic (center-based, Euclidean, dot product) & random sampling
+- Integrated coreset-based filtering for efficient TTA
+- Adjusted EATA adaptation logic for FLOPs reduction
 """
+
 
 from argparse import ArgumentDefaultsHelpFormatter
 from copy import deepcopy

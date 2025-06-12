@@ -3,6 +3,14 @@
 본 프로젝트는 EATA(Efficient Test-Time Adaptation) 알고리즘에 기반하여,
 다양한 coreset selection 전략을 적용한 경량화 TTA 프레임워크입니다.
 
+## 🧾 License
+
+This project is based on [EATA (Efficient Test-Time Adaptation without Forgetting)](https://github.com/mr-eggplant/EATA.git),  
+which is licensed under the MIT License.
+
+All modifications, including coreset-based filtering and herding strategies,  
+are also distributed under the same MIT license.
+
 ---
 ## 🔍 소개 (Overview)
 

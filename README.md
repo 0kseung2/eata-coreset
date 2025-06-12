@@ -19,24 +19,24 @@
 ---
 
 ## Usage(Coreset selection):
-python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_coreset_center_based_distance' or 'eata_coreset_euclidean' or 'eata_coreset_dot_product' --batch_size 64 --coreset_size 32 --output /output/dir
+```python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_coreset_center_based_distance' or 'eata_coreset_euclidean' or 'eata_coreset_dot_product' --batch_size 64 --coreset_size 32 --output /output/dir```
 
---algorithm:
-eata_coreset_center_based_distance
-eata_coreset_euclidean
-eata_coreset_dot_product
---batch_size: 64, 128, 256
---coreset_size: 64, 32, 16, 8 (must < batch size)
+--algorithm:<br>
+eata_coreset_center_based_distance<br>
+eata_coreset_euclidean<br>
+eata_coreset_dot_product<br>
+--batch_size: 64, 128, 256<br>
+--coreset_size: 64, 32, 16, 8 (must < batch size)<br>
 
 ## Usage(random sampling):
-python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_random_sampling' --batch_size 64 --filtering_size 32 --seed 1013 --output /output/dir
+```python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_random_sampling' --batch_size 64 --filtering_size 32 --seed 1013 --output /output/dir```
 
---batch_size: 64, 128, 256
---coreset_size: 64, 32, 16, 8 (must < batch size)
---seed: 1013, 2029, 3617
+--batch_size: 64, 128, 256<br>
+--coreset_size: 64, 32, 16, 8 (must < batch size)<br>
+--seed: 1013, 2029, 3617<br>
 
 ## Results:
-We report the results on ImageNet-C, severity level = 5, with ResNet-50.
+We report the results on ImageNet-C, severity level = 5, with ResNet-50.<br>
 
 **[표 1] FLOPs 및 샘플 수 대비 정확도 비교 (Center Herding 기준)**
 | Batch Size | Coreset Size | Filtered Samples | Estimated adaptation(backward) FLOPs (TFLOPs) | Mean Accuracy (%) |

@@ -22,9 +22,11 @@ are also distributed under the same MIT license.
   - Euclidean 기반 거리 선택
   - Center-based 거리
   - Dot product 기반 herding
-  - Random sampling (baseline)
+  - Random sampling
   
 ---
+## coreset selection과 random sampling은 eata_corest 폴더 안의 파일들로 수행할 수 있습니다.
+## baseline eata는 eata_original 폴더 안의 파일들로 수행할 수 있습니다.
 
 ## Usage(Coreset selection):
 ```python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_coreset_center_based_distance' or 'eata_coreset_euclidean' or 'eata_coreset_dot_product' --batch_size 64 --coreset_size 32 --output /output/dir```

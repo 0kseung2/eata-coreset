@@ -6,7 +6,7 @@
 ---
 ## 🔍 소개 (Overview)
 
-- **원본 기반**: [EATA (ICML 2022)](https://github.com/mingsun-tse/EATA)
+- **원본 기반**: [EATA (ICML 2022)](https://github.com/mr-eggplant/EATA.git)
 - **개선 내용**: 본 프로젝트에서는 test-time의 연산량(FLOPs)을 줄이기 위해,
   representative sample만을 선택하는 coreset 기반 적응 방식을 도입했습니다.
   

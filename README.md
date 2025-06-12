@@ -54,6 +54,20 @@ are also distributed under the same MIT license.
 '--seed' is choosen from:
   - 1013, 2029, 3617<br><br>
 
+## Usage(baseline):
+```python3 main.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'continual' or 'each_shift_reset' --algorithm 'eata' or 'eta' or 'tent' --output /output/dir```
+
+'--exp_type' is choosen from:
+  - continual
+  - each_shift_reset<br><br>
+  
+'--algorithm' is choosen from:
+  - eata
+  - eta
+  - tent<br><br>
+  
+
+
 ## Results:
 We report the results on ImageNet-C, severity level = 5, with ResNet-50.<br>
 

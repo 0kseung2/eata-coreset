@@ -21,24 +21,24 @@
 ## Usage(Coreset selection):
 ```python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_coreset_center_based_distance' or 'eata_coreset_euclidean' or 'eata_coreset_dot_product' --batch_size 64 --coreset_size 32 --output /output/dir```
 
-'--algorithm' is choosen from:<br>
+'--algorithm' is choosen from:
   - eata_coreset_center_based_distance
   - eata_coreset_euclidean
-  - eata_coreset_dot_product
+  - eata_coreset_dot_product<br><br>
 '--batch_size' is choosen from:
-  - 64, 128, 256<br>
+  - 64, 128, 256<br><br>
 '--coreset_size' is choosen from:
-  - 64, 32, 16, 8 (must < batch size)<br>
+  - 64, 32, 16, 8 (must < batch size)<br><br>
 
 ## Usage(random sampling):
 ```python3 main_coreset.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'each_shift_reset' --algorithm 'eata_random_sampling' --batch_size 64 --filtering_size 32 --seed 1013 --output /output/dir```
 
-'--batch_size' is choosen from: 
-  - 64, 128, 256<br>
+'--batch_size' is choosen from:
+  - 64, 128, 256<br><br>
 '--filtering_size' is choosen from:
-  - 64, 32, 16, 8 (must < batch size)<br>
+  - 64, 32, 16, 8 (must < batch size)<br><br>
 '--seed' is choosen from:
-  - 1013, 2029, 3617<br>
+  - 1013, 2029, 3617<br><br>
 
 ## Results:
 We report the results on ImageNet-C, severity level = 5, with ResNet-50.<br>

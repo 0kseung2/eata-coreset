@@ -25,7 +25,7 @@ are also distributed under the same MIT license.
   - Random sampling
   
 ---
-#### coreset selection과 random sampling은 eata_corest 폴더 안의 파일들로 수행할 수 있습니다.
+#### coreset selection과 random sampling은 eata_coreset 폴더 안의 파일들로 수행할 수 있습니다.
 #### baseline eata는 eata_original 폴더 안의 파일들로 수행할 수 있습니다.
 
 ## Usage(Coreset selection):

@@ -58,8 +58,8 @@ are also distributed under the same MIT license.
 ```python3 main.py --data /path/to/imagenet --data_corruption /path/to/imagenet-c --exp_type 'continual' or 'each_shift_reset' --algorithm 'eata' or 'eta' or 'tent' --output /output/dir```
 
 '--exp_type' is choosen from:
-  - continual
-  - each_shift_reset<br><br>
+  - 'continual' means the model parameters will never be reset, also called online adaptation;
+  - 'each_shift_reset' means after each type of distribution shift, e.g., ImageNet-C Gaussian Noise Level 5, the model parameters will be reset.<br><br>
   
 '--algorithm' is choosen from:
   - eata
